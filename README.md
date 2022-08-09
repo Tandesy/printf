@@ -1,4 +1,4 @@
-#_printf(); this project is a requirement of the Alx software engineering pair programming task. it is a collaboration between Norbert Offor, Naomi Kimata
+#_printf(); this project is a requirement of the Alx software engineering pair programming task. it is a collaboration between Norbert Offor and Naomi Kimata
 The function _printf() imitates the standard library function (stdio.h) printf(); some of the basic function of the printf can be found in the MAN pages.
 _printf() is a function which sends formatted string to the standard output. it's prototype is;
 int _printf(const char, * format, ...);
