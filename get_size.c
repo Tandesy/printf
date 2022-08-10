@@ -1,26 +1,34 @@
 #include "main.h"
 
 /**
- *get_size - Calculates the size to cast the argument
- *@format: Formatted string in which to print the arguments
- *@i: List of arguments to be printed.
- *
- *Return: Precision.
+ *print_string - loops through a string and prints
+ *every character
+ *@l: va_list arguments from _printf
+ *@f: pointer to the struct flags that determines
+ *if a flag is passed to _printf
+ *Return: number of char printed
  */
-int get_size(const char *format, int *i)
+int print_string(va_list l, flags_t *f)
 {
-int curr_i = *i + 1;
-int size = 0;
+char *s = va_arg(l, char *);
 
-if (format[curr_i] == 'l')
-size = S_LONG;
-else if (format[curr_i] == 'h')
-size = S_SHORT;
+(void)f;
 
-if (size == 0)
-*i = curr_i - 1;
-else
-*i = curr_i;
+if (!s)
+s = "(null)";
+return (_puts(s));
+}
 
-return (size);
+/**
+ *print_char - prints a character
+ *@l: va_list arguments from _printf
+ *@f: pointer to the struct flags that determines
+ *if a flag is passed to _printf
+ *Return: number of char printed
+ */
+int print_char(va_list l, flags_t *f)
+{
+(void)f;
+_putchar(va_arg(l, int));
+return (1);
 }
